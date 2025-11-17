@@ -1,0 +1,17 @@
+<aside class="site-sidebar">
+  <nav class="sidebar-nav">
+    <h2 class="sidebar-title">Notes</h2>
+    <ul class="sidebar-list">
+      {% assign pages = site.pages | sort: 'path' %}
+      {% for p in pages %}
+        {% if p.name contains ".md" and p.name != "index.md" %}
+          <li class="sidebar-item">
+            <a href="{{ p.url | relative_url }}" class="sidebar-link{% if p.url == page.url %} sidebar-link-active{% endif %}">
+              {{ p.title | default: p.name }}
+            </a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </nav>
+</aside>

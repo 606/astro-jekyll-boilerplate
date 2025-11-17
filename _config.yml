@@ -1,0 +1,6 @@
+title: "My Notes"
+theme: minima
+
+include:
+  - 1.md
+  - 2.md
